@@ -1,6 +1,15 @@
 {
-  "buildCommand": "cd Dashboard && npm install && npm run build",
+  "builds": [
+    {
+      "src": "Dashboard/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "installCommand": "cd Dashboard && npm ci",
+  "buildCommand": "cd Dashboard && npm run build",
   "outputDirectory": "Dashboard/dist",
-  "installCommand": "npm ci",
-  "framework": "nextjs"
+  "framework": null
 }
